@@ -1,12 +1,14 @@
-export default function UserFavoriteFoods(){
-    return(
-    <section>
-        <span>Favorite Food</span>
-        <ul>
-            <li>Pizza</li>
-            <li>Hambúrger</li>
-            <li>Cocunut</li>
-        </ul>
-    </section>
-    )
+import PropTypes from 'prop-types';
+
+export default function UserFavoriteFoods(props) {
+    return (
+        <section>
+            <span>Favorite Food</span>
+            <ul>
+                {props.foods.map((food, index) => (
+                    <li key={index}>{food.name}</li>
+                ))}
+            </ul>
+        </section>
+    );
 }
