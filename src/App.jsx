@@ -9,9 +9,10 @@ export default function App() {
         <>
             <div><h1>Root Component</h1></div>
             <UserProfile 
+                username='Bobby Charlton'
                 age='22 anos' 
                 isLoginIn={true} 
-                favoriteFoods={[{ name: 'Pizza' }, { name: 'Hambúrger' }, { name: 'Cocunut' }]} 
+                favoriteFoods={[{ name: 'Pizza', id: 'pizza' }, { name: 'Hambúrger', id: 'hamburger'  }, { name: 'Cocunut', id: 'cocunut'  }]} 
                 callMe={callMe} // Passando a função callMe como uma prop
             />
         </>

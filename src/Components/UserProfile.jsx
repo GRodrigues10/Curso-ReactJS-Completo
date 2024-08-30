@@ -9,7 +9,7 @@ export default function UserProfile(props) {
     return (
         <>
             <div id="user-profile">
-                <UserUserName username='Bobby Charlton' />
+                <UserUserName username={props.username} />
                 <b>Age</b>
                 <span>{props.age}</span>
                 <UserFavoriteFoods foods={props.favoriteFoods} /> {/* Passando os alimentos favoritos */}
@@ -17,4 +17,17 @@ export default function UserProfile(props) {
             </div>
         </>
     );
+}
+
+UserProfile.propTypes = {
+    username: PropTypes.string.isRequired,
+    age:PropTypes.string.isRequired,
+    favoriteFoods:PropTypes.arrayOf(
+        PropTypes.shape({
+            name:PropTypes.string.isRequired,
+            id:PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    isLoginIn:PropTypes.bool,//A ausência do isRequired não torna isso obrigatório
+    callMe:PropTypes.func//A ausência do isRequired não torna isso obrigatório
 }
